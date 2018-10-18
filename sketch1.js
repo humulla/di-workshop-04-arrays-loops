@@ -10,11 +10,11 @@ function setup() {
 function draw() {
   background(200)
 
-  ys [0] =  ys [0] + s [0]
-  if (ys [0] < 0 || ys [0] > height) {
-    s [0] = s [0] * -1
-  }
-  rect(30, ys [0], 20, 20)
+    ys [0] =  ys [0] + s [0]
+    if (ys [0] < 0 || ys [0] > height) {
+        s [0] = s [0] * -1
+    }
+    rect(30, ys [0], 20, 20)
 
   ys [1] = ys [1] + s [1]
   if (ys [1] < 0 || ys [1] > height) {
