@@ -286,29 +286,29 @@ happens.
 
 | Line                      | Expected Result | Actual Result | Were you right? Why? |
 | ------------------------- | --------------- | ------------- | -------------------- |
-| `[]`                      |                 |               |                      |
-| `[1, 2, 3]`               |                 |               |                      |
-| `['a', 'b', 'c']`         |                 |               |                      |
-| `['a', 2, false]`         |                 |               |                      |
-| `[].length`               |                 |               |                      |
-| `[5, 6, 7].length`        |                 |               |                      |
-| `var myArray = [5, 6, 7]` |                 |               |                      |
-| `myArray`                 |                 |               |                      |
-| `myArray.length`          |                 |               |                      |
-| `myArray[1]`              |                 |               |                      |
-| `myArray[0]`              |                 |               |                      |
-| `myArray[2]`              |                 |               |                      |
-| `myArray[3]`              |                 |               |                      |
-| `myArray[1] = 'hi'`       |                 |               |                      |
-| `myArray[1]`              |                 |               |                      |
-| `myArray`                 |                 |               |                      |
-| `myArray.push(14)`        |                 |               |                      |
-| `myArray`                 |                 |               |                      |
-| `myArray.length`          |                 |               |                      |
-| `var index = 1`           |                 |               |                      |
-| `myArray[index]`          |                 |               |                      |
-| `index = 2`               |                 |               |                      |
-| `myArray[index]`          |                 |               |                      |
+| `[]`                      |     []          |        []     |     yes              |
+| `[1, 2, 3]`               |  [1, 2, 3]      |(3)  [1, 2, 3] |    yes               |
+| `['a', 'b', 'c']`         | (3)['a','b','c'] (3)['a','b','c']|       yes           |                      
+| `['a', 2, false]`         |(3)['a', 2, false] (3)['a', 2, false]|      yes         |                      
+| `[].length`               |[].length        |        0      |       no             |
+| `[5, 6, 7].length`        |     3           |      3        |       yes            |
+| `var myArray = [5, 6, 7]` |  3              | undefined     |   no                 |
+| `myArray`                 | [5, 6, 7]       |  (3)[5, 6, 7] |    no                |
+| `myArray.length`          | (3)[5, 6, 7]    | 3             |     no               |
+| `myArray[1]`              |       6         |     6         |       yes            |
+| `myArray[0]`              |       5         |     5         |      yes             |
+| `myArray[2]`              |       7         |     7         |      yes             |
+| `myArray[3]`              |   undefined     |    undefined  |     yes              |
+| `myArray[1] = 'hi'`       |  hi             |   hi          |     yes              |
+| `myArray[1]`              | hi              |   hi          |     yes              |
+| `myArray`                 |  (3)[5, hi, 7]  |(3)[5, hi, 7]  |     yes              |
+| `myArray.push(14)`        |(4)[5, hi, 7, 14]|     4         |     no               |
+| `myArray`                 |(4)[5, hi, 7, 14]|(4)[5, hi,7,14]|     yes              |
+| `myArray.length`          |        (4)      |     4         |    yes               |
+| `var index = 1`           |    1            |  undefined    |     no               |
+| `myArray[index]`          |     4           |   hi          |     no               |
+| `index = 2`               |   2             |   2           |     yes              |
+| `myArray[index]`          |   7             |  7            |    yes               |
 
 Hopefully you'll be able to see that:
 
