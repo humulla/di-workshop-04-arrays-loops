@@ -1,6 +1,6 @@
 var ys = [20, 100, 180]
 var s  = [3, 3, 3]
-var count = 3
+var count = 5
 
 
 function setup() {
@@ -11,6 +11,7 @@ function setup() {
 function draw() {
     background(200)
     
+
     for(var i = 0; i < 3; i++){
         ys[i] = ys[i] + s[i]
         if (ys [i] < 0 || ys [i] > height) {
@@ -19,7 +20,14 @@ function draw() {
 
       rect(30 * (i + 1), ys[i], 20, 20)
       }
+    
+    for(var i = 0; i < count; i++){
+      ys.push()
+      s.push()
+      
+
     }
     
-
+    }
+    
 
